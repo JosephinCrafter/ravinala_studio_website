@@ -37,8 +37,7 @@ class MyApp extends StatelessWidget {
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
 
-  static String cloudStorageURL =
-      "https://console.firebase.google.com/project/ravinala-website/storage/ravinala-website.appspot.com/files";
+  static String cloudStorageURL = "gs://ravinala-website.appspot.com/";
 
   final String title;
 
@@ -61,7 +60,9 @@ class _MyHomePageState extends State<MyHomePage> {
         // the App.build method, and use it to set our appbar title.
         title: Text(widget.title),
       ),
-      body: const Text("Cloud storage"),
+      body: const Center(
+        child: Text('Implement view'),
+      ),
     );
   }
 }

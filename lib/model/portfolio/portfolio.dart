@@ -1,4 +1,14 @@
 import 'portfolio_flag.dart';
+import 'package:json_annotation/json_annotation.dart';
+
+part 'portfolio.g.dart';
+
+const String titleKey = "title";
+const String descriptionKey = "description";
+const String imagesKey = "images";
+const String priceKey = "price";
+const String timeCostKey = "timeCost";
+const String flagsKey = "flags";
 
 /// This is a portfolio project representation.
 ///
@@ -23,6 +33,11 @@ import 'portfolio_flag.dart';
 /// }
 /// ```
 
+@JsonSerializable(
+  checked: true,
+  explicitToJson: true,
+  genericArgumentFactories: true,
+)
 class Portfolio {
   const Portfolio({
     required this.title,
@@ -64,4 +79,14 @@ class Portfolio {
   /// This list is used by the Portfolio search/filters engine
   /// to add granularity to portfolios and must not be null.
   final List<PortfolioFlag> flags;
+
+  /// factory from JsonSerializable
+  factory Portfolio.fromJson(Map<String, dynamic> json) =>
+      _$PortfolioFromJson(json);
+
+  /// Convert a Portfolio object to a json Map<String, dynamic>
+  Map<String, dynamic> toJson() => _$PortfolioToJson(this);
+
+  /// A string mapping to flags.
+  static Map<PortfolioFlag, String> get flagsAndNames => _$PortfolioFlagEnumMap;
 }

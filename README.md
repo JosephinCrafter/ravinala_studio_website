@@ -14,3 +14,28 @@ A few resources to get you started if this is your first Flutter project:
 For help getting started with Flutter development, view the
 [online documentation](https://docs.flutter.dev/), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
+
+```dart
+import 'package:flutter/material.dart';
+
+void main() {
+    run app(MyApp());
+}
+
+class MyApp extends StatefulWidget {
+    const MyApp(Key? key): super(key: key);
+    
+    @override
+    _MyAppState createState() {
+        return _MyAppState();
+    }
+}
+
+class _MyAppState extends State<MyApp> {
+    
+    @override
+    Widget build (context) {
+        return Scaffold();
+    }
+}
+``` 

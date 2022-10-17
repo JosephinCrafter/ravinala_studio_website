@@ -1,5 +1,7 @@
+import 'package:json_annotation/json_annotation.dart';
 import 'package:ravinala_studio_website/model/portfolio/portfolio.dart';
 
+@JsonEnum()
 enum PortfolioFlag {
   minimalist,
   graphic,
